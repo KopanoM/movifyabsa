@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "980727158564",
+    "firebase_url": "https://movieapp-effdd.firebaseio.com",
+    "project_id": "movieapp-effdd",
+    "storage_bucket": "movieapp-effdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980727158564:android:4e3ccc0d7f88a58c8e85b1",
+        "android_client_info": {
+          "package_name": "qubit.engineering.movieapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "980727158564-ve2sglpsa94kcaqpuerp4u4ter924mpi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVk4jQPcHd928KXf42Omw1zzK4fm9LVUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "980727158564-ve2sglpsa94kcaqpuerp4u4ter924mpi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

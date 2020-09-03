@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="search_hint">Search for a movie</string>
+    <string name="search_title">search_title</string>
+    <string name="drama">Drama</string>
+    <string name="sci_fi">Sci-Fi</string>
+    <string name="romance">Romance</string>
+    <string name="horror">Horror</string>
+    <string name="comedy">Comedy</string>
+    <string name="action">Action</string>
+    <string name="save_all_the_movies_you_enjoy">Save all the movies you enjoy, just click the heart button...</string>
+    <string name="your_movie_vault">Your Movie Vault</string>
+</resources>
