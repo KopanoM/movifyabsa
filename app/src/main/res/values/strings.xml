@@ -10,4 +10,9 @@
     <string name="action">Action</string>
     <string name="save_all_the_movies_you_enjoy">Save all the movies you enjoy, just click the heart button...</string>
     <string name="your_movie_vault">Your Movie Vault</string>
+    <string name="glass">Error Loading Movie</string>
+    <string name="plot_summary">Plot Summary</string>
+    <string name="actors">Actors</string>
+    <string name="language">Language</string>
+    <string name="there_is_a_problem_with_your_internet_please_check_your_online_or_that_your_movie_exists">There is a problem with your internet. Please check your online or that your movie exists</string>
 </resources>

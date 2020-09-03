@@ -18,19 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if(retrievePref())
-        saveSharedPref()
+        if (retrievePref())
+            saveSharedPref()
 
         setOnClickListeners()
-        //setSupportActionBar(toolbar)
-        /*
-        button.setOnClickListener{
-            val intent = Intent(this, MovieActivity::class.java)
-            intent.putExtra("moviename","The Matrix")
-            startActivity(intent)
-        }
 
-         */
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -39,11 +31,12 @@ class MainActivity : AppCompatActivity() {
         val searchView = searchItem.actionView as SearchView
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView.apply {
+
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
         }
 
         searchView.queryHint = "Search for a movie"
-        searchView.setOnQueryTextListener(object :  SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
             override fun onQueryTextChange(newText: String): Boolean {
                 //Toast.makeText(this@MainActivity, newText, Toast.LENGTH_SHORT).show()
@@ -65,67 +58,69 @@ class MainActivity : AppCompatActivity() {
 
         return true
     }
-    fun passDataOpenActivity(data: String){
 
-        val intent = Intent(this,MovieActivity::class.java);
+    fun passDataOpenActivity(data: String) {
+
+        val intent = Intent(this, MovieActivity::class.java);
         intent.putExtra("moviename", data)
 
         startActivity(intent)
 
 
-
-    }
-    fun setOnClickListeners(){
-
-        action.setOnClickListener{
-            val intent = Intent(this, AllMovies::class.java)
-            intent.putExtra("genre","Action")
-            startActivity(intent)
-        }
-        comedy_cardview.setOnClickListener{
-            val intent = Intent(this, AllMovies::class.java)
-            intent.putExtra("genre","Comedy")
-            startActivity(intent)
-        }
-        drama_cardview.setOnClickListener{
-            val intent = Intent(this, AllMovies::class.java)
-            intent.putExtra("genre","Drama")
-            startActivity(intent)
-        }
-        scifi_cardview.setOnClickListener{
-            val intent = Intent(this, AllMovies::class.java)
-            intent.putExtra("genre","Sci-Fi")
-            startActivity(intent)
-        }
-        romance_cardview.setOnClickListener{
-            val intent = Intent(this, AllMovies::class.java)
-            intent.putExtra("genre","Romance")
-            startActivity(intent)
-        }
-        horror_cardview.setOnClickListener{
-            val intent = Intent(this, AllMovies::class.java)
-            intent.putExtra("genre","Horror")
-            startActivity(intent)
-        }
-
-
     }
 
-    fun saveSharedPref(){
-        var uniqueID : String = UUID.randomUUID().toString()
-        val preference=getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
-        val editor=preference.edit()
-        editor.putString("UID",uniqueID)
+    fun setOnClickListeners() {
+
+        action.setOnClickListener {
+            val intent = Intent(this, AllMovies::class.java)
+            intent.putExtra("genre", "Action")
+            startActivity(intent)
+        }
+        comedy_cardview.setOnClickListener {
+            val intent = Intent(this, AllMovies::class.java)
+            intent.putExtra("genre", "Comedy")
+            startActivity(intent)
+        }
+        drama_cardview.setOnClickListener {
+            val intent = Intent(this, AllMovies::class.java)
+            intent.putExtra("genre", "Drama")
+            startActivity(intent)
+        }
+        scifi_cardview.setOnClickListener {
+            val intent = Intent(this, AllMovies::class.java)
+            intent.putExtra("genre", "Sci-Fi")
+            startActivity(intent)
+        }
+        romance_cardview.setOnClickListener {
+            val intent = Intent(this, AllMovies::class.java)
+            intent.putExtra("genre", "Romance")
+            startActivity(intent)
+        }
+        horror_cardview.setOnClickListener {
+            val intent = Intent(this, AllMovies::class.java)
+            intent.putExtra("genre", "Horror")
+            startActivity(intent)
+        }
+
+
+    }
+
+    fun saveSharedPref() {
+        var uniqueID: String = UUID.randomUUID().toString()
+        val preference =
+            getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
+        val editor = preference.edit()
+        editor.putString("UID", uniqueID)
         editor.commit()
     }
 
-    fun retrievePref():Boolean {
+    fun retrievePref(): Boolean {
         val preference =
             getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
         val uID = preference.getString("UID", "NULL")
-        if(uID == "NULL"){
+        if (uID == "NULL") {
             return true
-        }else{
+        } else {
             return false
         }
     }

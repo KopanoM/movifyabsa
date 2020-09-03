@@ -21,6 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <ProgressBar
             android:id="@+id/progress_bar1"
             android:layout_width="wrap_content"
@@ -33,10 +34,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="There is a problem with your internet. Please check your online or that your movie exists"
+            android:text="@string/there_is_a_problem_with_your_internet_please_check_your_online_or_that_your_movie_exists"
             android:visibility="gone"/>
 
         <ScrollView
+
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -49,11 +51,12 @@
 
 
                 <ImageView
+
                     android:id="@+id/movie_thumbnail"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_gravity="center"
-                    android:scaleType="matrix"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/glass"/>
 
                 <LinearLayout
@@ -67,7 +70,7 @@
                         android:id="@+id/movie_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Glass"
+                        android:text="@string/glass"
                         android:textSize="40sp"
                         android:textStyle="bold" />
 
@@ -83,7 +86,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="0.3"
-                            android:text="2019"
+                            android:text=""
                             android:textSize="16sp"
 
                             android:textStyle="bold" />
@@ -94,7 +97,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="0.3"
-                            android:text="1h 30 Min"
+                            android:text=""
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -113,6 +116,7 @@
                         android:orientation="horizontal">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_topic1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
@@ -129,7 +133,7 @@
                                     android:id="@+id/movie_genre_one"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Action"
+                                    android:text="."
                                     android:textColor="@color/colorWhite" />
                                 />
 
@@ -138,6 +142,7 @@
                         </androidx.cardview.widget.CardView>
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/cardview_topic2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="16dp"
@@ -153,7 +158,7 @@
                                     android:id="@+id/movie_genre_two"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Drama"
+                                    android:text="."
                                     android:textColor="@color/colorWhite" />
                                 />
 
@@ -168,6 +173,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/plot_linear"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -179,10 +185,11 @@
                             android:src="@drawable/ic_plot"/>
 
                         <TextView
+                            android:id="@+id/plot_hardcoded"
                             android:layout_marginLeft="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Plot Summary"
+                            android:text="@string/plot_summary"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -195,11 +202,12 @@
                         android:id="@+id/movie_summary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="This will be the summary of the movie"
+                        android:text=""
                         android:textSize="14sp"
                         />
 
                     <LinearLayout
+                        android:id="@+id/plot_actors"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -212,10 +220,11 @@
 
 
                         <TextView
+                            android:id="@+id/actor_hardcoded"
                             android:layout_marginLeft="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Actors"
+                            android:text="@string/actors"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -225,14 +234,16 @@
 
 
                     <TextView
+
                         android:id="@+id/movie_actors"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Jacob Zuma, Tshepo Modondo"
+                        android:text=""
                         android:textSize="14sp"
                         />
 
                     <LinearLayout
+                        android:id="@+id/lan_linear"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -247,7 +258,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Language"
+                            android:text="@string/language"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -262,11 +273,12 @@
                         android:id="@+id/movie_language"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="English"
+                        android:text=""
                         android:textSize="14sp"
                         />
 
                     <LinearLayout
+                        android:id="@+id/rated_linear"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -298,11 +310,12 @@
                         android:id="@+id/movie_allowed_rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PG-13"
+                        android:text=""
                         android:textSize="14sp"
                         />
 
                     <LinearLayout
+                        android:id="@+id/production_linear"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -330,11 +343,12 @@
                         android:id="@+id/movie_production"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Universal Pictures"
+                        android:text=""
                         android:textSize="14sp"
                         />
 
                     <TextView
+                        android:id="@+id/hardcodedRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Ratings"
@@ -342,7 +356,7 @@
                         android:textStyle="bold" />
 
                     <LinearLayout
-
+                        android:id="@+id/rate_linear"
                         android:layout_gravity="center"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -359,7 +373,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="54 %"
+                            android:text=""
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -374,7 +388,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="7.7"
+                            android:text=""
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>

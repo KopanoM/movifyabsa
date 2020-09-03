@@ -12,12 +12,12 @@ import java.util.*
 class IntroductionScreens : AppIntro() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if(isLaunch()){
+        if (isLaunch()) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
 
-        }else{
+        } else {
             putLaunch()
         }
 
@@ -30,29 +30,34 @@ class IntroductionScreens : AppIntro() {
         // You can use AppIntroFragment to use a pre-built fragment
         addSlide(
             AppIntroFragment.newInstance(
-            imageDrawable = R.drawable.cinema,
-            title = "Welcome to Moviefy",
-            description = "Save a collection of your favourite movies, search for anything"
-        ))
-        addSlide(AppIntroFragment.newInstance(
-            imageDrawable = R.drawable.cloud,
-            title = "Cloud",
-            description = "All your movies are saved on the cloud"
-        ))
+                imageDrawable = R.drawable.cinema,
+                title = "Welcome to Moviefy",
+                description = "Save a collection of your favourite movies, search for anything"
+            )
+        )
+        addSlide(
+            AppIntroFragment.newInstance(
+                imageDrawable = R.drawable.cloud,
+                title = "Cloud",
+                description = "All your movies are saved on the cloud"
+            )
+        )
     }
 
-    fun isLaunch(): Boolean{
-        val preference = getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
+    fun isLaunch(): Boolean {
+        val preference =
+            getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
         val isLaunch = preference.getBoolean("islaunch", false)
         return isLaunch
 
     }
 
-    fun putLaunch(){
-        var islaunch : Boolean
-        val preference=getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
-        val editor=preference.edit()
-        editor.putBoolean("islaunch",true)
+    fun putLaunch() {
+        var islaunch: Boolean
+        val preference =
+            getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
+        val editor = preference.edit()
+        editor.putBoolean("islaunch", true)
         editor.commit()
     }
 

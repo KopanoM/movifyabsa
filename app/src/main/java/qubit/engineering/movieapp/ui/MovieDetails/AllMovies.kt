@@ -15,6 +15,7 @@ import qubit.engineering.movieapp.R
 import qubit.engineering.movieapp.addapters.MovieAdapter
 import qubit.engineering.movieapp.ui.SavedMoviesViewModel
 import qubit.engineering.movielookup.data.Movie
+import java.lang.Exception
 
 class AllMovies : AppCompatActivity() {
     private lateinit var viewModel: SavedMoviesViewModel
@@ -46,6 +47,7 @@ class AllMovies : AppCompatActivity() {
         initMovies()
         initRecyclerView()
     }
+
     private fun initRecyclerView() {
         recycler_view.layoutManager = LinearLayoutManager(this)
         moviesAdapter = MovieAdapter(genList)
@@ -60,10 +62,11 @@ class AllMovies : AppCompatActivity() {
  */
 
     }
-    private fun hideProgress(state:Boolean){
-        if(state){
+
+    private fun hideProgress(state: Boolean) {
+        if (state) {
             progress_bar_content.visibility = View.VISIBLE
-        }else{
+        } else {
             progress_bar_content.visibility = View.GONE
         }
 
@@ -89,19 +92,24 @@ class AllMovies : AppCompatActivity() {
         mDatabaseReference.child(retrievePref()).addListenerForSingleValueEvent(menuListener)
     }
 
-    private fun filterList(){
-        if(mov.size>0){
-
-            for(mo in mov){
-                if(mo.genre.contains(name)){
-                    genList.add(mo)
+    private fun filterList() {
+        if (mov.size > 0) {
+            try {
+                for (mo in mov) {
+                    if (mo.genre.contains(name)) {
+                        genList.add(mo)
+                    }
                 }
+
+            } catch (e: Exception) {
+
             }
 
+
         }
-        if(genList.size>0){
+        if (genList.size > 0) {
             txt_no_movies.visibility = View.GONE
-        }else{
+        } else {
             txt_no_movies.visibility = View.VISIBLE
 
         }
@@ -111,7 +119,7 @@ class AllMovies : AppCompatActivity() {
 
     }
 
-    fun retrievePref(): String{
+    fun retrievePref(): String {
         val preference =
             getSharedPreferences(resources.getString(R.string.app_name), Context.MODE_PRIVATE)
         val uID = preference.getString("UID", "NULL").toString()

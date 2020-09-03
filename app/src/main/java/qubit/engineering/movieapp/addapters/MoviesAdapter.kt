@@ -59,8 +59,8 @@ class MovieAdapter(private val list: List<Movie>): RecyclerView.Adapter<Recycler
             year.setText(movie.year)
 
             val requestOptions = RequestOptions()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.refresh)
+                .error(R.drawable.attention)
 
 
             Glide.with(itemView.context)
